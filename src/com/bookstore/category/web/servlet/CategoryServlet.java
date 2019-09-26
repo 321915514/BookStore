@@ -12,7 +12,7 @@ import com.bookstore.category.service.CategoryService;
 
 import net.sf.json.JSONArray;
 import servlet.BaseServlet;
-
+//扩展功能..................................
 public class CategoryServlet extends BaseServlet {
 	private CategoryService categoryService=new CategoryService();
 	public String findAll(HttpServletRequest request,HttpServletResponse response) throws IOException {

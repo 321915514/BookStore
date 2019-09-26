@@ -34,7 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<div class="left fl">
 				</div>
 				<div class="right fr">
-					<div class="gouwuche fr"><a href="">购物车</a></div>
+					<div class="gouwuche fr"><a href="<c:url value='/gouwuche.jsp'/>">购物车</a></div>
 					<div class="fr">
 								<c:choose>
 								<c:when test="${ empty sessionScope.user }">

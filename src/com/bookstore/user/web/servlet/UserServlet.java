@@ -72,6 +72,13 @@ public class UserServlet extends BaseServlet {
 		}else if (!email.matches("\\w+@\\w+\\.\\w+")) {
 			errors.put("email", "Email格式错误");
 		}
+		String vcode=form.getVcode();
+		if (vcode==null || vcode.trim().isEmpty()) {
+			errors.put("vcode", "验证码不能为空");
+		}
+			else if (!vcode.equalsIgnoreCase( (String) request.getSession().getAttribute("vcode"))) {
+				errors.put("vcode", "验证码错误");
+			}
 		if (errors != null&&errors.size()>0) {
 			request.setAttribute("errors", errors);
 			request.setAttribute("form", form);
@@ -125,6 +132,14 @@ public class UserServlet extends BaseServlet {
 		}else if (password.length()<3||password.length()>10) {
 			errors.put("password", "密码长度必须在3-10之间");
 		}
+
+		String vcode=form.getVcode();
+		if (vcode==null || vcode.trim().isEmpty()) {
+			errors.put("vcode", "验证码不能为空");
+		}
+			else if (!vcode.equalsIgnoreCase( (String) request.getSession().getAttribute("vcode"))) {
+				errors.put("vcode", "验证码错误");
+			}
 		if (errors != null&&errors.size()>0) {
 			request.setAttribute("errors", errors);
 			request.setAttribute("form", form);

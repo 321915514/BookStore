@@ -7,6 +7,13 @@ public class User {
 	private String email;
 	private String code;
 	private boolean state;
+	private String vcode;
+	public String getVcode() {
+		return vcode;
+	}
+	public void setVcode(String vcode) {
+		this.vcode = vcode;
+	}
 	public String getU_id() {
 		return u_id;
 	}

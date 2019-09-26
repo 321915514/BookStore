@@ -22,6 +22,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         <meta name="author" content="order by dede58.com"/>
 		<title>用户注册</title>
 		<link rel="stylesheet" type="text/css" href="./css/login.css">
+		<script type="text/javascript">
+			function change(){
+				var a=document.getElementById("image");
+				a.src="/BookStore/Vcode?a="+new Date().getTime();
+	}
+	</script>
 
 	</head>
 	<body>
@@ -31,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<div class="regist_center">
 				<div class="regist_top">
 					<div class="left fl">会员注册</div>
-					<div class="right fr"><a href="<c:url value='/index.jsp'/>" target="_self">小米商城</a></div>
+					<div class="right fr"><a href="<c:url value='/index.jsp'/>" target="_self">phil商城</a></div>
 					<div class="clear"></div>
 					<div class="xian center"></div>
 				</div>
@@ -43,7 +49,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<div class="username">邮&nbsp;&nbsp;&nbsp;&nbsp;箱:&nbsp;&nbsp;<input class="shurukuang" type="text" name="email" value="${form.email}" placeholder="请填写正确的邮箱"/><span style="color:red">${errors.email}</span></div>
 					<div class="username">
 						<div class="left fl">验&nbsp;&nbsp;证&nbsp;&nbsp;码:&nbsp;&nbsp;<input class="yanzhengma" type="text" name="vcode" placeholder="请输入验证码"/></div>
-						<div class="right fl"><img src="./image/yanzhengma.jpg"></div>
+						<div class="right fl"><img src="<c:url value='/Vcode'/>" id="image"></div>
+						<a href="javascript:change()" >换一张</a>
+						<div><span style="color:red;margin-left:50px">${errors.vcode}</span></div>
 						<div class="clear"></div>
 					</div>
 				</div>

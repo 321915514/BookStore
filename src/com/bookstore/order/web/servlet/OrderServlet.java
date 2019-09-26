@@ -45,7 +45,7 @@ public class OrderServlet extends BaseServlet{
 		cart.clear();
 		orderService.add(order);
 		request.setAttribute("order", order);
-		return "f:/desc.jsp";
+		return "f:/order/desc.jsp";
 		
 	}
 	public String myOrders(HttpServletRequest request,HttpServletResponse response) {
@@ -54,6 +54,6 @@ public class OrderServlet extends BaseServlet{
 		List<Order> orderList=orderService.myOrders(user.getU_id());
 		System.out.println(orderList.toString());
 		request.setAttribute("orderList", orderList);
-		return "f:/list.jsp";
+		return "f:/order/list.jsp";
 	}
 }
